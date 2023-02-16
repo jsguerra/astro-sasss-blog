@@ -1,0 +1,43 @@
+// ================================
+// Breakpoint
+// ================================
+
+// http://jakearchibald.github.io/sass-ie/
+
+// Example Usage:
+// .element {
+//   @include breakpoint($bp-medium) {}
+// }
+
+@mixin breakpoint($flex-pivot) {
+  @media (min-width: $flex-pivot) {
+    @content;
+  }
+}
+
+// ================================
+// List Reset
+// ================================
+
+// Example usage:
+// nav {
+//   @include list-reset;
+// }
+// nav ul {
+//   @include list-reset;
+// }
+// ul { @include list-rest}
+
+@mixin list-reset {
+  &,
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}

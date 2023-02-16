@@ -10,6 +10,14 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/image": "^0.15.0",
+		"@astrojs/rss": "^2.1.0",
+		"@astrojs/sitemap": "^1.0.1",
 		"astro": "^2.0.12"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.13",
+		"cssnano": "^5.1.15",
+		"sass": "^1.58.1"
 	}
 }

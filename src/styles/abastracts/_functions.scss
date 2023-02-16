@@ -1,0 +1,31 @@
+@use "sass:math";
+@use "sass:meta";
+
+// Calculate rem sizes
+// ============================
+
+@function cre($target, $context: 16) {
+  @return calc-rem-size($target, $context);
+}
+
+@function calc-rem-size($target, $context: 16) {
+  $strip-target: su($target);
+  $strip-context: su($context);
+
+  @return math.div($strip-target, $strip-context) * 1rem;
+}
+
+// Strip units
+// ============================
+
+@function su($num) {
+  @return strip-unit($num);
+}
+
+@function strip-unit($num) {
+  @if meta.type-of($num) == "number" and not math.is-unitless($num) {
+    @return math.div($num, $num * 0 + 1);
+  }
+
+  @return $num;
+}

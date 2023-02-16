@@ -1,13 +1,14 @@
-# Astro Starter Kit: Minimal
+# Astro Sass Blog
+> Custom blog setup with Sass installed. Customize as required.
 
-```
-npm create astro@latest -- --template minimal
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## App Features
+Custom features installed into this starter template.
+- RSS feed
+- Sitmap
+- Collections usage
+- Pagination
+- Custom 404 page
+- Sass folders based on 7 - 1 Architecture
 
 ## 🚀 Project Structure
 
@@ -17,8 +18,23 @@ Inside of your Astro project, you'll see the following folders and files:
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── comopnents/
+│   ├── content/
+│   │   └── config.ts
+│   ├── layout/
+│   │   └── BaseLayout.astro
+│   ├── pages/
+│   │   ├── posts/
+│   │   └── index.astro
+│   ├── styles/
+│   │   ├── abstracts/
+│   │   ├── base/
+│   │   ├── components/
+│   │   ├── layout/
+│   │   ├── pages/
+│   │   └── global.scss
+│   └── util/
+│       └── dateForma.ts
 └── package.json
 ```
 
@@ -41,6 +57,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
