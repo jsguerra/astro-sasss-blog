@@ -1,34 +1,20 @@
 ---
+import BaseLayout from "@layout/BaseLayout.astro";
 import "@styles/global.scss";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header>
-			<h1>Astro Logo</h1>
-		</header>
-		<main>
-			<article>
-				<header>
-					<h2>Article Title</h2>
-				</header>
-				<div class="entry">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga asperiores sequi aliquid maiores accusantium blanditiis saepe facere quae vitae dolores totam deleniti consequuntur assumenda rem, est unde voluptatum dolore? Harum.</p>
-				</div>
-				<footer>
-					<p>Some footer content</p>
-				</footer>
-			</article>
-		</main>
-		<footer>
-			&copy; 2023 Copyright
-		</footer>
-	</body>
-</html>
+<BaseLayout pageTitle="Homepage">
+  <article>
+    <header>
+      <h2>Article Title</h2>
+    </header>
+    <div class="entry">
+      <p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tenetur fuga fugit autem qui non illum soluta architecto odit enim placeat illo, deserunt laborum nemo! Obcaecati dolorem recusandae amet commodi!
+      </p>
+    </div>
+    <footer>
+      <p>Some footer content</p>
+    </footer>
+  </article>
+</BaseLayout>

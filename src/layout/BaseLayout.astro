@@ -1,3 +1,68 @@
 ---
-// To Do: create custom layout
+import { SITE } from "@siteConfig";
+import "@styles/global.scss";
+
+interface Props {
+  pageTitle: string;
+  description?: string;
+  ogImage?: string | URL;
+  type?: string;
+  bodyClass?: string;
+}
+
+const { pathname } = Astro.url;
+const {
+  pageTitle,
+  description = SITE.desc,
+  ogImage = "",
+  type = "article",
+  bodyClass = pathname == "/" ? "home" : pathname.slice(1),
+} = Astro.props;
+
+const date = new Date();
+const year = date.getFullYear();
 ---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pathname == "/" ? "" : pageTitle + " |"} {SITE.title}</title>
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
+
+    <!-- External Styles -->
+    <link rel="icon" type="image/svg+xml" href={`favicon.svg`} />
+  </head>
+  <body class={bodyClass}>
+    <header class="site-header">
+      <div class="flex">
+        <a href="/"><h1>Astro Logo</h1></a>
+        <nav class="nav-primary"></nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      &copy; {year} {SITE.title}
+    </footer>
+  </body>
+</html>
